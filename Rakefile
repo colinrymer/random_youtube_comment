@@ -16,9 +16,9 @@ Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "random_youtube_comment"
   gem.homepage = "http://github.com/crymer11/random_youtube_comment"
-  gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.license = "UNLICENSE"
+  gem.summary = %Q{Retrieves a (psuedo)random comment from a (psuedo)random video.}
+  gem.description = %Q{Retrieves a (psuedo)random comment from a (psuedo)random video using the Wordnik API to get a random word, search YouTube for that word, get a random search result with comments, and then get a random comment from that result. Ugly, but it works. Usually.}
   gem.email = "colin.rymer@gmail.com"
   gem.authors = ["Colin Rymer"]
   # dependencies defined in Gemfile
