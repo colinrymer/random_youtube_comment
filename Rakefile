@@ -12,6 +12,7 @@ end
 require 'rake'
 
 require 'jeweler'
+require './lib/random_youtube_comment/version'
 Jeweler::Tasks.new do |gem|
   gem.name = "random_youtube_comment"
   gem.homepage = "http://github.com/crymer11/random_youtube_comment"
