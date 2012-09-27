@@ -20,6 +20,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Retrieves a (psuedo)random comment from a (psuedo)random video using the Wordnik API to get a random word, search YouTube for that word, get a random search result with comments, and then get a random comment from that result. Ugly, but it works. Usually.}
   gem.email = "colin.rymer@gmail.com"
   gem.authors = ["Colin Rymer"]
+  gem.version = RandomYoutubeComment::VERSION
   # dependencies defined in Gemfile
 end
 Jeweler::RubygemsDotOrgTasks.new
@@ -39,7 +40,7 @@ task :default => :spec
 
 require 'rdoc/task'
 Rake::RDocTask.new do |rdoc|
-  version = File.exist?('VERSION') ? File.read('VERSION') : ""
+  version = RandomYoutubeComment::VERSION
 
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title = "random_youtube_comment #{version}"
