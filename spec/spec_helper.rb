@@ -10,3 +10,7 @@ Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each {|f| require f}
 RSpec.configure do |config|
   
 end
+
+RandomYoutubeComment.setup do |config|
+  config.wordnik_api_key = ENV['WORDNIK_API_KEY'] || APP_CONFIG['wordnik_api_key']
+end

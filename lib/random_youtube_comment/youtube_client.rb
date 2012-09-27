@@ -1,19 +1,19 @@
+require 'random_youtube_comment/wordnik_client'
+
 require 'youtube_it'
 
 module RandomYoutubeComment
   class YoutubeClient
     class << self
-      def get_random_comment(word)
-        id = get_video_id(word)
-        client.comments(id).sample
+      def random_comment_for_video(video_id)
+        client.comments(video_id).sample
       end
 
-      def get_random_video(word)
-        video = search_for_videos(word).sample while client.comments(video.unique_id).length < 2
-      end
-
-      def search_for_videos(word)
-        videos = client.videos_by(query: word).videos while videos.nil? || videos.length < 1
+      def random_video
+        begin
+          video = search_for_videos.sample
+        end while video.nil? || video.comment_count < 2
+        video
       end
 
       private
@@ -22,10 +22,14 @@ module RandomYoutubeComment
         @client ||= YouTubeIt::Client.new
       end
 
-      def get_video_id(word)
-        videos = client.videos_by(query: word).videos while videos.nil? || videos.length < 1
-        id = videos.sample.unique_id while client.comments(id).length < 2
+      def search_for_videos
+        begin
+          word = RandomYoutubeComment::WordnikClient.random_word
+          videos = client.videos_by(query: word).videos
+        end while videos.nil? || videos.length < 1
+        videos
       end
+
     end
   end
 end

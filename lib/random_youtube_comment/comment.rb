@@ -1,19 +1,16 @@
-require 'random_youtube_comment/wordnik_client'
 require 'random_youtube_comment/youtube_client'
 
 module RandomYoutubeComment
   class Comment
-    attr_accessor :comment, :id, :author, :body, :title, :video_id
+    attr_accessor :youtube_it_comment, :id, :author, :body, :title, :video_id, :video
 
     def initialize
-      random_word = RandomYoutubeComment::WordnikClient.random_word
-      video = RandomYoutubeComment::YoutubeClient.get_random_video(word)
-      comment = RandomYoutubeComment::YoutubeClient.get_random_comment(video.unique_id)
-      
-      @comment = video.random_comment
-      @id, @author = @comment.url.split(":").last, @comment.author.name
-      @body, @title =  @comment.content, @comment.title
-      @video_id = video.unique_id
+      @video = RandomYoutubeComment::YoutubeClient.random_video
+      @video_id = @video.unique_id
+
+      @youtube_it_comment = RandomYoutubeComment::YoutubeClient.random_comment_for_video(@video_id)
+      @id, @author = @youtube_it_comment.url.split(":").last, @youtube_it_comment.author.name
+      @body, @title =  @youtube_it_comment.content, @youtube_it_comment.title
     end
 
     
