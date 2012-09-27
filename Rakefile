@@ -13,7 +13,6 @@ require 'rake'
 
 require 'jeweler'
 Jeweler::Tasks.new do |gem|
-  # gem is a Gem::Specification... see http://docs.rubygems.org/read/chapter/20 for more options
   gem.name = "random_youtube_comment"
   gem.homepage = "http://github.com/crymer11/random_youtube_comment"
   gem.license = "UNLICENSE"
