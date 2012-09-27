@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "random_youtube_comment"
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Colin Rymer"]
@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
     "lib/random_youtube_comment.rb",
     "lib/random_youtube_comment/comment.rb",
     "lib/random_youtube_comment/configuration.rb",
+    "lib/random_youtube_comment/version.rb",
     "lib/random_youtube_comment/wordnik_client.rb",
     "lib/random_youtube_comment/youtube_client.rb",
     "random_youtube_comment.gemspec",
