@@ -9,7 +9,7 @@ Retrieves a (psuedo)random comment from a (psuedo)random video using the Wordnik
 
 == Configuration
 
-RandomYoutubeComment requires a Wordnik API key {available at [developer.wordnik.com}[http://developer.wordnik.com]).
+RandomYoutubeComment requires a Wordnik API key (available at {developer.wordnik.com}[http://developer.wordnik.com]).
 
 The api key can be passed in as a global configuration option:
 
