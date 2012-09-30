@@ -20,7 +20,7 @@ The api key can be passed in as a global configuration option:
 
 == Usage
 
-To get a comment, use `RandomYoutubeComment.comment` which will retun an object of the `RandomYoutubeComment::Comment` class.
+To get a comment, use <tt>RandomYoutubeComment.comment</tt> which will retun an object of the <tt>RandomYoutubeComment::Comment</tt> class.
     
 == Contributing to random_youtube_comment
  
